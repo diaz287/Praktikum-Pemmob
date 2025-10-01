@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.example.ifunsoedmobile"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -53,4 +53,5 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.activity.ktx)
+    implementation("com.github.bumptech.glide:glide:5.0.5")
 }

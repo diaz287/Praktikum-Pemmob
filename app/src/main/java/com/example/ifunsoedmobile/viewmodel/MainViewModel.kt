@@ -18,14 +18,14 @@ class MainViewModel : ViewModel() {
             try {
                 val response = RetrofitInstance.api.searchBooks(query, 10)
                 if (response.isSuccessful) {
-                    val result=response.body()?.docs ?: emptyList()
+                    val result = response.body()?.docs ?: emptyList()
                     _books.value = result
-                    Log.d("SUCCESS_GET_DATA: $result")
+                    Log.d("SUCCESS_GET_DATA", "$result")
                 } else {
-                    Log.e("API_ERROR: ${response.code()} ${response.message()}")
+                    Log.e("API_ERROR", "${response.code()} ${response.message()}")
                 }
             } catch (e: Exception) {
-                Log.e("API_EXCEPTION:", e.localizedMessage?: "Unknown error")
+                Log.e("API_EXCEPTION", e.localizedMessage ?: "Unknown error")
             }
         }
     }
